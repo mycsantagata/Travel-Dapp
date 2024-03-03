@@ -2,7 +2,6 @@ import {Card} from 'react-bootstrap'
 import { useAccount, useDisconnect , useBalance} from 'wagmi';
 import {Button} from 'react-bootstrap';
 import {formatEther} from 'viem';
-import "../css/balanceBoard.css"
 import { useEffect } from 'react';
 
 const BalanceBoard: React.FC = () => {
