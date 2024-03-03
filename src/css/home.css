@@ -1,0 +1,32 @@
+.text-fade {
+    animation: fadeInOut 1s linear infinite alternate;
+    font-weight: bold;
+    margin-top:30px;
+  }
+
+.shadows{
+  box-shadow: 14px 12px 14px rgba(0, 0, 0, 0.116); /* Imposta un'ombra di 4px di spessore, 6px di offset dal basso, con opacità 0.1 */
+}
+
+.enlarge:hover {
+  transform: scale(1.05); /* Ingrossa la carta del 5% al passaggio del mouse */
+  transition: transform 0.6s ease; /* Aggiunge un effetto di transizione fluido */
+}
+
+.font-bold{
+  font-weight: bold;
+}
+
+.text-center {
+    align-items: center;
+    margin-top: 5%;
+  } 
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
