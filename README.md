@@ -3,7 +3,7 @@
 Travel Dapp is a decentralised application (DApp) that offers users the ability to book travel using Ethereum blockchain technology.
 The main objective of Travel Dapp is to provide a secure, transparent and decentralised travel booking experience, eliminating the need for traditional intermediaries such as travel agencies or centralised booking platforms.
 
-***Attention: the platform supports the Sepolia testnet! In order to test dapp, you can receive a sum of test tokens from [here](https://www.alchemy.com/faucets/ethereum-sepolia). You also need a wallet to be able to connect to dapp and make transactions***
+***Attention: the platform supports the Sepolia testnet, Ethereum mainnet and Polygon! In order to test dapp, you can receive a sum of test tokens from [here](https://www.alchemy.com/faucets/ethereum-sepolia). You also need a wallet to be able to connect to dapp and make transactions***
 
 ## Technologies
 
