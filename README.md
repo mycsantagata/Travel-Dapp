@@ -3,7 +3,7 @@
 Travel Dapp is a decentralised application (DApp) that offers users the ability to book travel using Ethereum blockchain technology.
 The main objective of Travel Dapp is to provide a secure, transparent and decentralised travel booking experience, eliminating the need for traditional intermediaries such as travel agencies or centralised booking platforms.
 
-***Attention: the platform supports the Sepolia testnet! In order to test dapp, you can receive a sum of test tokens from [here](https://www.alchemy.com/faucets/ethereum-sepolia). You also need a wallet to be able to connect to dapp and make transactions***
+***Attention: the platform supports the Sepolia testnet, Ethereum mainnet and Polygon! In order to test dapp, you can receive a sum of test tokens from [here](https://www.alchemy.com/faucets/ethereum-sepolia). You also need a wallet to be able to connect to dapp and make transactions***
 
 ## Technologies
 
@@ -13,6 +13,7 @@ This project is built using :
 + TypeScript
 + React Bootstrap
 + Wagmi
++ Axios
 
 ## Installation and Configuration
 
@@ -33,10 +34,13 @@ Before starting the project locally, environment variables must be configured:
 ```
 VITE_WC_PROJECT_ID=
 VITE_WC_ADDRESS_TO=
+VITE_WC_CG_API_KEY=
 ```
 + If you are not already registered, sign up for WalletConnect at this [link](https://cloud.walletconnect.com/sign-in), create a project in the 'Projects' section, now that you have your **Project ID** paste it into the first environment variable.
   
 + In the second variable paste the address of the Wallet to which the payment of all transactions made on the platform should be sent.
+
++ In the third variable, if you are not already registrered, sign up for coin gecko at this [link](https://www.coingecko.com/), click on **developer dashboard** on your account and then click on **add new key**
 
 ## Structure
 + **Login**: Users can access the platform using MetaMask or WalletConnect.
@@ -50,3 +54,4 @@ VITE_WC_ADDRESS_TO=
 
 ## Web Reference
 Direct Link: [link](https://travel-dapp-neon.vercel.app/)
+
