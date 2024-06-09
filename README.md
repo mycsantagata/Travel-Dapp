@@ -13,7 +13,7 @@ This project is built using :
 + TypeScript
 + React Bootstrap
 + Wagmi
-+ axios
++ Axios
 
 ## Installation and Configuration
 
