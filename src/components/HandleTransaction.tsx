@@ -12,15 +12,19 @@ const HandleTransaction: React.FC<IHandleTransactionProps> = ({ price, showModal
 
     const { data: hash, error, sendTransaction, isPending } = useSendTransaction();
     const { isLoading, isSuccess } = useWaitForTransactionReceipt({hash}); 
-
-
+    
     const handleSendTransaction = async () =>{
        try{
-            sendTransaction({to: import.meta.env.VITE_WC_ADDRESS_TO, value: parseEther(price)});
+            sendTransaction({to: import.meta.env.VITE_WC_ADDRESS_TO, 
+                value: parseEther(price)});
+
         }catch(err){
             console.log("Transaction err: "+err);
         }      
     }
+
+    const isTransactionInProgress = isPending || isLoading;
+    const showInitialMessage = !isPending && !isLoading && !isSuccess && !error;
 
     return (
         <Modal show={showModal} centered onHide={onClose} backdrop="static" backdropClassName="modal-backdrop-glass">
@@ -28,12 +32,12 @@ const HandleTransaction: React.FC<IHandleTransactionProps> = ({ price, showModal
                 <Modal.Title>Confirm Transaction</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            {!isPending && !isSuccess && !isLoading && !error &&
+            {showInitialMessage &&
                 <div className="text-center">
                     <p>Are you sure you want to continue with the transaction?</p>
                 </div>
             }
-            {(isPending || isLoading) && 
+            {isTransactionInProgress && 
                 <div className="text-center">
                     <Spinner animation="border" role="status"/>
                     <p>Loading...</p>
@@ -51,8 +55,8 @@ const HandleTransaction: React.FC<IHandleTransactionProps> = ({ price, showModal
             }
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" disabled={isPending || isLoading ? true : false}  onClick={onClose}>Annulla</Button>
-                <Button variant="primary" disabled={isPending || isLoading ? true : false} onClick={ !isSuccess ? handleSendTransaction : onClose}>OK</Button>        
+                <Button variant="secondary" disabled={isTransactionInProgress ? true : false}  onClick={onClose}>Cancel</Button>
+                <Button variant="primary" disabled={isTransactionInProgress ? true : false} onClick={ !isSuccess ? handleSendTransaction : onClose}>OK</Button>        
             </Modal.Footer>
         </Modal>
     )
